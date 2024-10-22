@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { Container,Row,Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 
@@ -53,17 +53,23 @@ const [resultData,setResult]=useState([]);
 
       //code ends
   }
+  //
+  useEffect(()=>{
+    getnews();
+  },[])
+
+ 
   return (
     <Container>
       <Row>
-        <Col md="12">
-        <input type='button' className='btn btn-primary' onClick={getnews} value="Get News"/>
+        <Col className='bg-red-200  p-4 m-4 w-1/2'>
+        <input type='button' className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={getnews} value="Get News"/>
         </Col>
         </Row>
     <Row>
         {
           resultData.map((item)=>{
-             return <Col lg sm md="3"><Card style={{ width: '18rem' }}>
+             return <Col className='columns-3'><Card style={{ width: '18rem' }}>
              
                <Card.Body>
                <Card.Img variant="top" src={item.image}/>
