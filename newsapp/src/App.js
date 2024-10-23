@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { Container,Row,Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
+import ContextApi from './Components/ContextApi/ContextApi';
+//import Classcomponent from './Components/Classcomponet/Classcomponent';
 
 function App() {
 const [newsteaser, setTeaser]=useState();
@@ -64,6 +66,8 @@ const [resultData,setResult]=useState([]);
       <Row>
         <Col className='bg-red-200  p-4 m-4 w-1/2'>
         <input type='button' className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={getnews} value="Get News"/>
+       {/* <Classcomponent value={"hello"}></Classcomponent> */}
+       <ContextApi></ContextApi>
         </Col>
         </Row>
     <Row>
