@@ -1,8 +1,16 @@
 import Image from "next/image";
-;
+import User from "./Component/User/User";
+import Link from "next/link";
+
+
 
 export default function Home() {
   return (
-    <h1 className="m-4 text-4xl">Hello Next</h1>
+    <>
+    <a href="/About">ABOUT US</a>
+    <Link href="/About">About Link</Link>
+    <User/>
+    </>
+    
   );
 }
