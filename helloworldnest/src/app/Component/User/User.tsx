@@ -2,9 +2,13 @@
 
 
 
-import React from 'react'
+import React, { Children } from 'react'
 import Button from '../Atoms/Button/Button';
 import Label from '../Atoms/Label/Label';
+import Heading from '../Atoms/Heading/Heading';
+import NewsContent from '../Atoms/NewsContent/NewsContent';
+import Link from 'next/link';
+import Article from '../Atoms/GraphqlContent/Article';
 
 
 interface User{
@@ -30,11 +34,18 @@ const res=await fetch("https://jsonplaceholder.typicode.com/users");
       <h1 className='m-4'>This is a Sample user page</h1>
       <Button  title='hello' message='abcd'></Button>
       <Label title='m' message='binu'></Label>
+      <Heading title='heading' message='news master head'></Heading>
+      <NewsContent title="the" message='man'></NewsContent>
+
+      <Article></Article>
+
+      {/* <Image name='firstimage' src='yihkj'></Image> */}
+      {/* <Link href={Children} children='linkedin' title='first'></Link> */}
       <ul>
    {
-      users.map(item=>{
-            return <li key={item.id}>{item.name}</li>
-      })
+      // users.map(item=>{
+      //       return <li key={item.id}>{item.name}</li>
+      // })
    }
    </ul>
 
