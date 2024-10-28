@@ -8,7 +8,7 @@ import Label from '../Atoms/Label/Label';
 import Heading from '../Atoms/Heading/Heading';
 import NewsContent from '../Atoms/NewsContent/NewsContent';
 import Link from 'next/link';
-import Article from '../Atoms/GraphqlContent/Article';
+import Article from '../../News/Article';
 
 
 interface User{
@@ -37,7 +37,7 @@ const res=await fetch("https://jsonplaceholder.typicode.com/users");
       <Heading title='heading' message='news master head'></Heading>
       <NewsContent title="the" message='man'></NewsContent>
 
-      <Article></Article>
+      
 
       {/* <Image name='firstimage' src='yihkj'></Image> */}
       {/* <Link href={Children} children='linkedin' title='first'></Link> */}

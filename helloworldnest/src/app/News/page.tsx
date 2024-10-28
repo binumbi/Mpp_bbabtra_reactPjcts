@@ -1,6 +1,8 @@
+"use client"
+
 import React from 'react'
 import { ApolloProvider,ApolloClient,InMemoryCache } from '@apollo/client'
-
+import Article from './Article';
 
 
 
@@ -16,7 +18,9 @@ function GraphqlNewsContent() {
 
     <ApolloProvider client={client}>
         <div>
-      
+      <Article>
+        
+      </Article>
         </div>
     </ApolloProvider>
  
