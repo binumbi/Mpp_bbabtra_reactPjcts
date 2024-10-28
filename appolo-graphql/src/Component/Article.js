@@ -29,7 +29,7 @@ useEffect(()=>{
 
   return (
     <div>
-      <p>Artile Loading....</p>
+      <p>Artile Loading. wait...</p>
       <ul>
         {
              articledata.map((item)=>{
