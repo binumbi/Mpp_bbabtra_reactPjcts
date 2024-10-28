@@ -9,7 +9,7 @@ const authors = [
     { id: 2, name: 'J. R. R. Tolkien' },
     { id: 3, name: 'Brent Weeks' }
 ]
-
+//
 const articles = [
     { id: 1, title: 'Harry Potter and the Chamber of Secrets',image:"",description:"", authorId: 1 },
     { id: 2, title: 'Harry Potter and the Prisoner of Azkaban', image:"",description:"",authorId: 1 },
