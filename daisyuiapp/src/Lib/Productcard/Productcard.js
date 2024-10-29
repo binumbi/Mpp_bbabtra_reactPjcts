@@ -7,22 +7,22 @@ import { useQuery,gql } from '@apollo/client';
 
 function Productcard() {
 
-    // const GET_NEWS =gql`{
-    //     articles{
-    //         id
-    //         image
-    //         description
-    //         title
-    //     }
-    //   }`;
-
     const GET_NEWS =gql`{
-            newsarticles{
+        articles{
             id
+            image
+            description
             title
-            content
-            }
-    }`;
+        }
+      }`;
+
+    // const GET_NEWS =gql`{
+    //         newsarticles{
+    //         id
+    //         title
+    //         content
+    //         }
+    // }`;
 
       const{data,loading,error}= useQuery(GET_NEWS);
    
