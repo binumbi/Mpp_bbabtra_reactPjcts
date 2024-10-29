@@ -37,17 +37,6 @@ const res=await fetch("https://jsonplaceholder.typicode.com/users");
       <Heading title='heading' message='news master head'></Heading>
       <NewsContent title="the" message='man'></NewsContent>
 
-      
-
-      {/* <Image name='firstimage' src='yihkj'></Image> */}
-      {/* <Link href={Children} children='linkedin' title='first'></Link> */}
-      <ul>
-   {
-      // users.map(item=>{
-      //       return <li key={item.id}>{item.name}</li>
-      // })
-   }
-   </ul>
 
 
     </div>

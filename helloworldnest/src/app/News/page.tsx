@@ -5,7 +5,6 @@ import { ApolloProvider,ApolloClient,InMemoryCache } from '@apollo/client'
 import Article from './Article';
 
 
-
 function GraphqlNewsContent() {
 
 
@@ -21,6 +20,7 @@ function GraphqlNewsContent() {
       <Article>
         
       </Article>
+      
         </div>
     </ApolloProvider>
  

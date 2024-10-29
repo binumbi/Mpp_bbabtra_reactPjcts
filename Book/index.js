@@ -10,16 +10,35 @@ const authors = [
     { id: 3, name: 'Brent Weeks' }
 ]
 //
+const category= [
+    { id:1, name:'Genaeral', slug:'GEN'},
+    { id:2, name:'Politics', slug:'POL'},
+    { id:3, name:'Travel', slug:'TRL'},
+    { id:4, name:'Technology', slug:'TECH'}
+]
+
 const articles = [
-    { id: 1, title: 'Harry Potter and the Chamber of Secrets',image:"",description:"", authorId: 1 },
-    { id: 2, title: 'Harry Potter and the Prisoner of Azkaban', image:"",description:"",authorId: 1 },
-    { id: 3, title: 'Harry Potter and the Goblet of Fire', image:"",description:"",authorId: 1 },
+    { id: 1, title: 'Harry Potter and the Chamber of Secrets',image:"bkjwherho",description:"weer", authorId: 1,categoryId:1 },
+    { id: 2, title: 'Harry Potter and the Prisoner of Azkaban', image:"awsed",description:"werwe",authorId: 1 },
+    { id: 3, title: 'Harry Potter and the Goblet of Fire', image:"asd3",description:"escs",authorId: 1 },
     { id: 4, title: 'The Fellowship of the Ring',image:"",description:"", authorId: 2 },
     { id: 5, title: 'The Two Towers', image:"",description:"",authorId: 2 },
     { id: 6, title: 'The Return of the King',image:"",description:"", authorId: 2 },
     { id: 7, title: 'The Way of Shadows',image:"",description:"",authorId: 3 },
     { id: 8, title: 'Beyond the Shadows',image:"",description:"", authorId: 3 }
 ]
+
+const newsarticles =[
+    {id:1,title: "New Discoveries in Space",date: "2024-10-29",author: "Jane Doe",content: "Scientists have made groundbreaking discoveries about exoplanets in recent studies, revealing new insights into their atmospheres and potential for life.",
+    image: {
+          url: "https://example.com/images/space-discovery.jpg",
+          alt: "A stunning view of exoplanets in the galaxy"
+        },
+        category: "Science",
+        tags: ["space", "exoplanets", "discovery"]
+      },
+]
+
 const {
     GraphQLSchema,
     GraphQLObjectType,
@@ -40,6 +59,26 @@ const {
     })
     
 })*/
+
+const NewsType = new GraphQLObjectType({
+    name:"NewsList",
+    description:"This represents a News Content",
+    fields:()=>({
+        id:{type:GraphQLNonNull(GraphQLInt)},
+        title:{type:GraphQLNonNull(GraphQLString)},
+        content:{type:GraphQLNonNull(GraphQLString)},
+    })
+})
+const CategoryType = new GraphQLObjectType({
+    name:"Category",
+    description:"This represents a News Category",
+    fields:()=>({
+        id:{type:GraphQLNonNull(GraphQLInt)},
+        name:{type:GraphQLNonNull(GraphQLString)},
+        slug:{type:GraphQLNonNull(GraphQLString)},
+    })
+})
+
 const ArticleType=new GraphQLObjectType({
     name:"News",
     description:"This represents a Author written",
@@ -84,6 +123,16 @@ const RootQueryType=new GraphQLObjectType({
                 id:{type:GraphQLInt}
             },
             resolve:(parent,args)=>books.find(book=>book.id===args.id)
+        },
+        categories:{
+            type:new GraphQLList(CategoryType),
+            description:'List Categories',
+            resolve:()=>category
+        },
+        newsarticles:{
+            type:new GraphQLList(NewsType),
+            description:'List News',
+            resolve:()=>newsarticles
         }
     })
 })
